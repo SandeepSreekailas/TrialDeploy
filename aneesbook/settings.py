@@ -90,16 +90,24 @@ WSGI_APPLICATION = "aneesbook.wsgi.application"
 #     }
 # }
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "aneesbookdb",
-        "USER": "root",
-        "PASSWORD": "1234",
-        "HOST": "localhost",
-        "PORT": "3305",
+import dj_database_url
+
+if DEBUG:
+
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "aneesbookdb",
+            "USER": "root",
+            "PASSWORD": "1234",
+            "HOST": "localhost",
+            "PORT": "3305",
+        }
     }
-}
+else:
+     DATABASES = {
+        'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    }
 
 
 
