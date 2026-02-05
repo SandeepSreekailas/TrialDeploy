@@ -1,0 +1,131 @@
+
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: #f5f5f5;
+}
+
+table {
+    width: 95%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+th {
+    background: #000000;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    padding: 16px;
+}
+
+td {
+    padding: 16px;
+    font-size: 14px;
+    color: #333;
+    vertical-align: middle;
+}
+
+tr {
+    transition: background 0.3s ease;
+}
+
+tr:nth-child(even) {
+    background: #fafafa;
+}
+
+tr:hover {
+    background: #f0f0f0;
+}
+
+/* Book cover */
+td img {
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Description */
+td:nth-child(4) {
+    max-width: 280px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Price highlight */
+td:nth-child(5) {
+    font-weight: 700;
+    color: #000;
+}
+
+/* Actions */
+td a {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 4px 4px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Update */
+td a[href*="update"] {
+    background: #111;
+    color: #fff;
+}
+
+td a[href*="update"]:hover {
+    background: #333;
+}
+
+/* Delete */
+td a[href*="delete"] {
+    background: #e63946;
+    color: #fff;
+}
+
+td a[href*="delete"]:hover {
+    background: #c1121f;
+}
+
+/* Add to cart */
+td a[href*="cart"] {
+    background: #38b000;
+    color: #fff;
+}
+
+td a[href*="cart"]:hover {
+    background: #2d6a4f;
+}
+
+/* Bottom buttons */
+a[href*="create_book"],
+a[href*="logout"] {
+    display: inline-block;
+    margin: 20px 10px 40px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a[href*="logout"] {
+    background: #444;
+}
+
+a[href*="create_book"]:hover,
+a[href*="logout"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}

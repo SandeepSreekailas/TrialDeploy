@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block title %}View book{% endblock %}
+
+ {% block extra_css%}
+ <link rel="stylesheet" href="{% static 'css/view.css' %}">
+ {% endblock %}
+   
+   
+   
+{% block content %}
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Cover</th>  
+            <th>title</th>
+            <th>author</th>
+            <th>description</th>
+            <th>price</th>
+            <th>published_date</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in boo %}
+        <tr>
+            {% if i.cover %}
+            <td><img src="{{i.cover.url}}" width="100" height="100"></td>
+            {% else %}
+            <td>No image</td>
+            {% endif %}
+            <td>{{i.title}}</td>
+            <td>{{i.author}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.published_date}}</td>
+            <td><a href="{% url 'update_book' i.id %}">Update</a>
+            <a href="{% url 'delete_book' i.id %}">Delete</a>
+            <a href="{% url 'add_to_cart' i.id %}">Add to Cart</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'create_book' %}">Add Book</a><br><br>
+    <a href="{% url 'logout_view' %}">Logout</a>
+
+{% endblock %}
