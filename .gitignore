@@ -3,3 +3,5 @@ anenv
 .env
 
 media
+
+db.sqlite3
